@@ -1,4 +1,8 @@
 this is a test
 I added this line
 asdfasdf
+<<<<<<< HEAD
 Jimmy
+=======
+sadfasdf
+>>>>>>> origin/master
