@@ -1,13 +1,5 @@
 package BoaGroup11;
 
-import java.io.Serializable;
-import java.util.HashMap;
-
-import negotiator.Bid;
-import negotiator.NegotiationResult;
-import negotiator.actions.Accept;
-import negotiator.actions.Action;
-import negotiator.actions.Offer;
 import negotiator.boaframework.agent.*;
 import negotiator.boaframework.*;
 
