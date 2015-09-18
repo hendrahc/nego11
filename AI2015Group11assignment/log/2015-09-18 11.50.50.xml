@@ -1,0 +1,7 @@
+<a>
+<NegotiationOutcome currentTime="2015-09-18 11:51:53" timeOfAgreement="3.5756071666666664E-4" bids="2" domain="etc/templates/partydomain/party_domain.xml" lastAction="(Accept)" runNumber="0" finalOutcome="Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Ballroom, Invitations: Photo, Music: DJ, Cleanup: Water and Soap, ]" errors="" startingAgent="A"> 
+<resultsOfAgent agent="A" agentName="Agent11" discount="1.0" agentClass="simple_agent11.Agent11" utilspace="Group11partydomain/party_profile_Hendra.xml" Opponent-agentName="Boulware" Opponent-agentClass="agents.TimeDependentAgentBoulware" Opponent-utilspace="Group11partydomain/party_profile_Jimmy.xml" finalUtility="0.6012455269828617" discountedUtility="0.6012455269828617" bestAcceptableBid="0.6012455269828617" bestDiscountedAccepableBid="3.4738373333333334E-4" maxUtility="1.0" normalizedUtility="0.6012455269828617" AcceptedBy="agentA"> 
+</resultsOfAgent> 
+<resultsOfAgent agent="B" agentName="Boulware" discount="1.0" agentClass="agents.TimeDependentAgentBoulware" utilspace="Group11partydomain/party_profile_Jimmy.xml" Opponent-agentName="Agent11" Opponent-agentClass="simple_agent11.Agent11" Opponent-utilspace="Group11partydomain/party_profile_Hendra.xml" finalUtility="1.0" discountedUtility="1.0" bestAcceptableBid="0.0" bestDiscountedAccepableBid="0.0" maxUtility="1.0" normalizedUtility="1.0" AcceptedBy="agentA"> 
+</resultsOfAgent> 
+</NegotiationOutcome> 

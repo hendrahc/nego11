@@ -47,6 +47,10 @@ public class HardHeadedFrequencyModel extends OpponentModel {
 	private int learnValueAddition;
 	private int amountOfIssues;
 
+	public HardHeadedFrequencyModel(NegotiationSession negotiationSession) {
+		this.negotiationSession = negotiationSession;
+	}
+
 	/**
 	 * Initializes the utility space of the opponent such that all value issue
 	 * weights are equal.
