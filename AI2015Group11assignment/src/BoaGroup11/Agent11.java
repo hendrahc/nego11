@@ -1,6 +1,9 @@
 package BoaGroup11;
 
 import negotiator.boaframework.agent.*;
+
+import java.io.IOException;
+
 import negotiator.boaframework.*;
 
 public class Agent11 extends BOAagent {

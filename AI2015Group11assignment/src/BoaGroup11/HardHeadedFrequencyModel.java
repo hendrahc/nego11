@@ -1,5 +1,6 @@
 package BoaGroup11;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -48,7 +49,12 @@ public class HardHeadedFrequencyModel extends OpponentModel {
 	private int amountOfIssues;
 
 	public HardHeadedFrequencyModel(NegotiationSession negotiationSession) {
-		this.negotiationSession = negotiationSession;
+		try {
+			init(negotiationSession, new HashMap<>());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**

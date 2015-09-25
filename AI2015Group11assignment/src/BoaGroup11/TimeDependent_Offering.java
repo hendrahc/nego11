@@ -121,7 +121,7 @@ public class TimeDependent_Offering extends OfferingStrategy {
 		double time = negotiationSession.getTime();
 		double utilityGoal;
 		utilityGoal = p(time);
-
+		System.out.println("util Goal = "+utilityGoal);
 		// System.out.println("[e=" + e + ", Pmin = " +
 		// BilateralAgent.round2(Pmin) + "] t = " + BilateralAgent.round2(time)
 		// + ". Aiming for " + utilityGoal);
@@ -164,7 +164,10 @@ public class TimeDependent_Offering extends OfferingStrategy {
 	 * @return double
 	 */
 	public double p(double t) {
-		return Pmin + (Pmax - Pmin) * (1 - f(t));
+		
+		double util = Pmin + (Pmax - Pmin) * (1 - f(t));
+		if(util > 0.7) return util;
+		return 0.7;
 	}
 
 	public NegotiationSession getNegotiationSession() {
