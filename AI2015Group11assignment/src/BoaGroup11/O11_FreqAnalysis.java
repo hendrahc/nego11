@@ -1,24 +1,13 @@
 package BoaGroup11;
 
-import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import negotiator.Bid;
 import negotiator.bidding.BidDetails;
-import negotiator.boaframework.BOAparameter;
-import negotiator.boaframework.NegotiationSession;
-import negotiator.boaframework.OpponentModel;
-import negotiator.issue.Issue;
-import negotiator.issue.IssueDiscrete;
-import negotiator.issue.Objective;
-import negotiator.issue.ValueDiscrete;
-import negotiator.utility.Evaluator;
-import negotiator.utility.EvaluatorDiscrete;
-import negotiator.utility.UtilitySpace;
+import negotiator.boaframework.*;
+import negotiator.issue.*;
+import negotiator.utility.*;
 
 /**
  * BOA framework implementation of the HardHeaded Frequecy Model. My main
@@ -37,18 +26,12 @@ import negotiator.utility.UtilitySpace;
  * 
  * @author Mark Hendrikx
  */
-public class HardHeadedFrequencyModel extends OpponentModel {
-
-	// the learning coefficient is the weight that is added each turn to the
-	// issue weights
-	// which changed. It's a trade-off between concession speed and accuracy.
-	private double learnCoef;
-	// value which is added to a value if it is found. Determines how fast
-	// the value weights converge.
-	private int learnValueAddition;
+public class O11_FreqAnalysis extends OpponentModel {
+	private double concessionRate = 0.2;
+	private int learnValueAddition = 1;
 	private int amountOfIssues;
 
-	public HardHeadedFrequencyModel(NegotiationSession negotiationSession) {
+	public O11_FreqAnalysis(NegotiationSession negotiationSession) {
 		try {
 			init(negotiationSession, new HashMap<>());
 		} catch (Exception e) {
@@ -65,12 +48,6 @@ public class HardHeadedFrequencyModel extends OpponentModel {
 	public void init(NegotiationSession negotiationSession,
 			HashMap<String, Double> parameters) throws Exception {
 		this.negotiationSession = negotiationSession;
-		if (parameters != null && parameters.get("l") != null) {
-			learnCoef = parameters.get("l");
-		} else {
-			learnCoef = 0.2;
-		}
-		learnValueAddition = 1;
 		initializeModel();
 	}
 
@@ -154,7 +131,7 @@ public class HardHeadedFrequencyModel extends OpponentModel {
 		// normalization.
 		// Also the value that is taken as the minimum possible weight,
 		// (therefore defining the maximum possible also).
-		double goldenValue = learnCoef / (double) amountOfIssues;
+		double goldenValue = concessionRate / (double) amountOfIssues;
 		// The total sum of weights before normalization.
 		double totalSum = 1D + goldenValue * (double) numberOfUnchanged;
 		// The maximum possible weight
@@ -214,15 +191,8 @@ public class HardHeadedFrequencyModel extends OpponentModel {
 	}
 
 	@Override
-	public String getName() {
-		return "HardHeaded Frequency Model";
+	public String getName(){
+		return "Opponent Model Agent 11 - Frequency Analysis";
 	}
 
-	@Override
-	public Set<BOAparameter> getParameters() {
-		Set<BOAparameter> set = new HashSet<BOAparameter>();
-		set.add(new BOAparameter("l", new BigDecimal(0.2),
-				"The learning coefficient determines how quickly the issue weights are learned"));
-		return set;
-	}
 }

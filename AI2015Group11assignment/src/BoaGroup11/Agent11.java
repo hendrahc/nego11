@@ -1,19 +1,21 @@
 package BoaGroup11;
 
 import negotiator.boaframework.agent.*;
-
-import java.io.IOException;
-
 import negotiator.boaframework.*;
+
+/************************************************/
+/* Assignment AI Technique - Negotiation Agent	*/
+/*												*/
+/************************************************/
 
 public class Agent11 extends BOAagent {
 	@Override
 	public void agentSetup () {
-		OpponentModel om = new HardHeadedFrequencyModel ( negotiationSession);
-		OMStrategy oms = new BestBid ( negotiationSession, om);
-		OfferingStrategy offering = new TimeDependent_Offering ( negotiationSession ,
-		om , oms , 0.2 , 0, 1, 0);
-		AcceptanceStrategy ac = new AC_Next ( negotiationSession , offering , 1, 0);
+		OpponentModel om = new O11_FreqAnalysis ( negotiationSession);
+		OMStrategy oms = new OMS11_BestBid ( negotiationSession, om);
+		OfferingStrategy offering = new B11_LowConcession (negotiationSession ,
+		om , oms);
+		AcceptanceStrategy ac = new A11_ACNext ( negotiationSession , offering);
 		setDecoupledComponents (ac , offering , om , oms );
 	}
 	@Override

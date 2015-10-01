@@ -1,17 +1,8 @@
 package BoaGroup11;
 
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-
+import java.util.*;
 import negotiator.bidding.BidDetails;
-import negotiator.boaframework.BOAparameter;
-import negotiator.boaframework.NegotiationSession;
-import negotiator.boaframework.OMStrategy;
-import negotiator.boaframework.OpponentModel;
+import negotiator.boaframework.*;
 
 /**
  * This class uses an opponent model to determine the next bid for the opponent,
@@ -20,20 +11,7 @@ import negotiator.boaframework.OpponentModel;
  * 
  * @author Mark Hendrikx
  */
-public class BestBid extends OMStrategy {
-
-	/**
-	 * when to stop updating the opponentmodel. Note that this value is not
-	 * exactly one as a match sometimes lasts slightly longer.
-	 */
-	double updateThreshold = 1.1;
-
-	/**
-	 * Empty constructor for the BOA framework.
-	 */
-	public BestBid() {
-	}
-
+public class OMS11_BestBid extends OMStrategy {
 	/**
 	 * Normal constructor used to initialize the BestBid opponent model
 	 * strategy.
@@ -43,7 +21,7 @@ public class BestBid extends OMStrategy {
 	 * @param model
 	 *            used by the opponent model strategy.
 	 */
-	public BestBid(NegotiationSession negotiationSession, OpponentModel model) {
+	public OMS11_BestBid(NegotiationSession negotiationSession, OpponentModel model) {
 		try {
 			super.init(negotiationSession, model);
 		} catch (Exception e) {
@@ -68,11 +46,6 @@ public class BestBid extends OMStrategy {
 			OpponentModel model, HashMap<String, Double> parameters)
 			throws Exception {
 		super.init(negotiationSession, model);
-		if (parameters.get("t") != null) {
-			updateThreshold = parameters.get("t").doubleValue();
-		} else {
-			System.out.println("OMStrategy assumed t = 1.1");
-		}
 	}
 
 	/**
@@ -124,14 +97,10 @@ public class BestBid extends OMStrategy {
 	 */
 	@Override
 	public boolean canUpdateOM() {
-		return negotiationSession.getTime() < updateThreshold;
+		return true;
 	}
-
-	@Override
-	public Set<BOAparameter> getParameters() {
-		Set<BOAparameter> set = new HashSet<BOAparameter>();
-		set.add(new BOAparameter("t", new BigDecimal(1.1),
-				"Time after which the OM should not be updated"));
-		return set;
+	
+	public String getName(){
+		return "OM Strategy Agent 11 - Best Bid";
 	}
 }
