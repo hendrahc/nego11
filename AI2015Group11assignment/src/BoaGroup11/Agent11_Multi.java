@@ -2,11 +2,14 @@ package BoaGroup11;
 
 
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 import java.util.Map.Entry;
+
+import org.apache.commons.math.stat.descriptive.moment.GeometricMean;
 
 import negotiator.*;
 import negotiator.BidHistory;
@@ -15,9 +18,6 @@ import negotiator.actions.Action;
 import negotiator.actions.Offer;
 import negotiator.actions.Reject;
 import negotiator.bidding.BidDetails;
-import negotiator.boaframework.Actions;
-import negotiator.boaframework.OutcomeSpace;
-import negotiator.boaframework.opponentmodel.NoModel;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
 import negotiator.issue.Objective;
@@ -28,6 +28,7 @@ import negotiator.session.TimeLineInfo;
 import negotiator.utility.Evaluator;
 import negotiator.utility.EvaluatorDiscrete;
 import negotiator.utility.UtilitySpace;
+import sun.management.resources.agent;
 
 /**
  * This is your negotiation party.
@@ -35,45 +36,12 @@ import negotiator.utility.UtilitySpace;
 public class Agent11_Multi extends AbstractNegotiationParty {
 
 	private UtilitySpace opponentUtilitySpace = new UtilitySpace(); 
-	private OutcomeSpace outcomespace;
 	private BidHistory bidHistory = new BidHistory();
 	
 	private int amountOfIssues;
 	private double learningRate = 0.2;
 	private int learnValueAddition = 1;
-	
-	public void init ( UtilitySpace utilSpace , Deadline deadline ,
-			TimeLineInfo timeline , long randomSeed , AgentID agentID){
-		this.utilitySpace = utilSpace;
-		this.deadlines = deadline;
-		this.timeline = timeline;
-		this.rand = new Random(randomSeed);
-		
-		// initialize the opponent's utility weights
-		opponentUtilitySpace = utilSpace;
-		amountOfIssues = opponentUtilitySpace.getDomain().getIssues().size();
-		for (Entry<Objective, Evaluator> e : opponentUtilitySpace
-				.getEvaluators()) {
-			// set the issue weights
-			opponentUtilitySpace.unlock(e.getKey());
-			e.getValue().setWeight(1D / (double) amountOfIssues);
-			try {
-				// set all value weights to one (they are normalized when
-				// calculating the utility)
-				for (ValueDiscrete vd : ((IssueDiscrete) e.getKey())
-						.getValues())
-					((EvaluatorDiscrete) e.getValue()).setEvaluation(vd, 1);
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		}
-		
-		//initialize the outcome space
-		
-		
-	}
-	
-	
+
 	/**
 	 * Each round this method gets called and ask you to accept or offer. The
 	 * first party in the first round is a bit different, it can only propose an
@@ -86,18 +54,33 @@ public class Agent11_Multi extends AbstractNegotiationParty {
 	@Override
 	public Action chooseAction(List<Class<? extends Action>> validActions) {
 
-		BidDetails nextBid = determineNextBid();
+		if(bidHistory.size()<2){
+			//Opening Bid
+			try {
+				System.out.println("opening bid util:" + getUtility(utilitySpace.getMaxUtilityBid()));
+				return new Offer(utilitySpace.getMaxUtilityBid());
+			} catch (Exception e) {
+				System.out.println("Fail to send offer");
+				e.printStackTrace();
+			}
+		}
 		
-		//double nextMyBidUtil = nextBid.getMyUndiscountedUtil();
-		//double lastOpponentBidUtil = bidHistory.getLastBidDetails().getMyUndiscountedUtil();
-
-		return new Offer(nextBid.getBid());
+		Bid nextBid = determineNextBid();
 		
-//		if (lastOpponentBidUtil >= nextMyBidUtil) {
-//			return new Accept();
-//		}
-//		return new Reject();
-		
+		double nextMyBidUtil = getUtility(nextBid);
+		double lastOpponentBidUtil = getUtility(bidHistory.getLastBidDetails().getBid());
+		System.out.println("last bid:"+lastOpponentBidUtil+", next bid:"+nextMyBidUtil);
+		if(lastOpponentBidUtil >=nextMyBidUtil){
+			return new Accept();
+		}
+		System.out.println("My utility is "+getUtility(nextBid));
+		try {
+			System.out.println("Opponent's utility is "+opponentUtilitySpace.getUtility(nextBid));
+		} catch (Exception e) {
+			System.out.println("Error to check opponent utility space");
+			e.printStackTrace();
+		}
+		return new Offer(nextBid);	
 	}
 
 	/**
@@ -113,23 +96,45 @@ public class Agent11_Multi extends AbstractNegotiationParty {
 	@Override
 	public void receiveMessage(Object sender, Action action) {
 		super.receiveMessage(sender, action);
-//		Bid currentOpBid = action.getBidFromAction(action);
-//		bidHistory.add(new BidDetails(currentOpBid,1));
-//		updateModel(currentOpBid, getTimeLine().getTime());
-		
+		Bid currentOpBid = Action.getBidFromAction(action);
+		try {
+			bidHistory.add(new BidDetails(currentOpBid,1));
+		} catch (Exception e) {
+			System.out.println("Error to add bid history");
+			e.printStackTrace();
+		}
+		updateModel(currentOpBid, getTimeLine().getTime());
 	}
 	
 	public void updateModel(Bid opponentBid, double time) {
-		if (bidHistory.size() < 2) {
+		if (bidHistory.size()<2) {
+			//initialize opponent model's weight
+			opponentUtilitySpace = new UtilitySpace(getUtilitySpace());
+			amountOfIssues = opponentUtilitySpace.getDomain().getIssues().size();
+			for (Entry<Objective, Evaluator> e : opponentUtilitySpace.getEvaluators()) {
+				// set the issue weights
+				opponentUtilitySpace.unlock(e.getKey());
+				e.getValue().setWeight(1D / (double) amountOfIssues);
+				try {
+					// set all value weights to one (they are normalized when
+					// calculating the utility)
+					for (ValueDiscrete vd : ((IssueDiscrete) e.getKey())
+							.getValues())
+						((EvaluatorDiscrete) e.getValue()).setEvaluation(vd, 1);
+				} catch (Exception ex) {
+					System.out.println("Fail to initialize opponent model");
+					ex.printStackTrace();
+				}
+			}
+			System.out.println("Opponent model successfully created");
+			return;
+		}else if(bidHistory.size() < 3){
 			return;
 		}
 		int numberOfUnchanged = 0;
 		BidDetails oppBid = bidHistory.getLastBidDetails();
-		BidDetails prevOppBid = bidHistory
-				.getHistory()
-				.get(bidHistory.size() - 2);
-		HashMap<Integer, Integer> lastDiffSet = determineDifference(prevOppBid,
-				oppBid);
+		BidDetails prevOppBid = bidHistory.getHistory().get(bidHistory.size() - 2);
+		HashMap<Integer, Integer> lastDiffSet = determineDifference(prevOppBid,oppBid);
 
 		// count the number of changes in value
 		for (Integer i : lastDiffSet.keySet()) {
@@ -206,25 +211,49 @@ public class Agent11_Multi extends AbstractNegotiationParty {
 		return diff;
 	}
 	
-	public BidDetails determineNextBid() {
+	public Bid determineNextBid() {
+		Bid bestBid;
 		double time = getTimeLine().getTime();
 		double utilityGoal;
 		utilityGoal = 1-Math.pow(time,3);
 		if(utilityGoal < 0.7){ utilityGoal = 0.7;}
-		BidDetails bestBid;
 		try {
-			bestBid = new BidDetails(utilitySpace.getMaxUtilityBid(),getTimeLine().getTime());
+			bestBid = getBidNearUtility(utilityGoal);
 			return bestBid;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println("Fail tp get bid near utility");
 			e.printStackTrace();
 		}
 				
-				outcomespace.getBidNearUtility(utilityGoal);
 		return null;
 	}
 	
-    
+	
+	private Bid getBidNearUtility(double target) throws Exception{
+		BidIterator iter = new BidIterator(utilitySpace.getDomain());
+		Bid bestBid = null;
+		double maxOpUtil = -1;
+		double delta = 0.1;
+		while(iter.hasNext()){
+			Bid nBid = iter.next();
+			try {
+				if(Math.abs( getUtility(nBid)-target)<delta){
+					System.out.println("opponent util:"+opponentUtilitySpace.getUtility(nBid));
+					if(opponentUtilitySpace.getUtility(nBid) > maxOpUtil){
+						bestBid = nBid;
+						maxOpUtil = getUtility(nBid); 
+					}
+				}
+			} catch (Exception e) {
+				System.out.println("Fail to get opponent utility space 2");
+				e.printStackTrace();
+			}
+		}
+		
+		return bestBid;
+	}
+	
+	
     @Override
     public String getDescription() {
     	return "Agent11 - Multilateral";
