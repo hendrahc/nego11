@@ -87,7 +87,7 @@
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="24. JonnyBlack" classPath="agents.anac.y2015.JonnyBlack.JonnyBlack" partyName="ANAC2015-24-JonnyBlack">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11_Multi.class" partyName="Agent11_Multi">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11_Go.class" partyName="Agent11_Go">
                 <properties/>
             </partyRepItem>
         </partyRepItems>
