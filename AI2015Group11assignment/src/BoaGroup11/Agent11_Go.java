@@ -1,40 +1,27 @@
 package BoaGroup11;
 
-
-
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
-
 import java.util.Map.Entry;
 
-import org.apache.commons.math.stat.descriptive.moment.GeometricMean;
-
 import negotiator.*;
-import negotiator.BidHistory;
-import negotiator.actions.Accept;
-import negotiator.actions.Action;
-import negotiator.actions.Offer;
-import negotiator.actions.Reject;
+import negotiator.actions.*;
 import negotiator.bidding.BidDetails;
-import negotiator.issue.Issue;
-import negotiator.issue.IssueDiscrete;
-import negotiator.issue.Objective;
-import negotiator.issue.ValueDiscrete;
+import negotiator.issue.*;
 import negotiator.parties.AbstractNegotiationParty;
-import negotiator.qualitymeasures.UtilspaceTools;
-import negotiator.session.TimeLineInfo;
-import negotiator.utility.Evaluator;
-import negotiator.utility.EvaluatorDiscrete;
-import negotiator.utility.UtilitySpace;
-import sun.management.resources.agent;
+import negotiator.utility.*;
 
-/**
- * This is your negotiation party.
- */
+/************************************************
+ * Assignment AI Technique - Negotiation Agent
+ * By:
+ * 	J.K. van Schoubroeck (4329996)
+ * 	H.H. Choiri (4468457)
+ *  T. Smit (4242785)
+ ************************************************/
+
 public class Agent11_Go extends AbstractNegotiationParty {
 
+	//opponent model & bidding history for each opponent agent
 	private HashMap<Object,UtilitySpace> opponentUtilitySpace = new HashMap<Object,UtilitySpace>(); 
 	private HashMap<Object,BidHistory> bidHistory = new HashMap<Object,BidHistory>();
 	
@@ -44,15 +31,6 @@ public class Agent11_Go extends AbstractNegotiationParty {
 	private double learningRate = 0.2;
 	private int learnValueAddition = 1;
 
-	/**
-	 * Each round this method gets called and ask you to accept or offer. The
-	 * first party in the first round is a bit different, it can only propose an
-	 * offer.
-	 *
-	 * @param validActions
-	 *            Either a list containing both accept and offer or only offer.
-	 * @return The chosen action.
-	 */
 	@Override
 	public Action chooseAction(List<Class<? extends Action>> validActions) {
 
@@ -70,8 +48,8 @@ public class Agent11_Go extends AbstractNegotiationParty {
 		Bid nextBid = determineNextBid();
 		
 		double nextMyBidUtil = getUtility(nextBid);
-
-		System.out.println("last bid:"+getUtility(lastBid)+", next bid:"+nextMyBidUtil);
+		
+		//AC Next Approach
 		if(getUtility(lastBid) >=nextMyBidUtil){
 			return new Accept();
 		}
@@ -79,16 +57,6 @@ public class Agent11_Go extends AbstractNegotiationParty {
 		return new Offer(nextBid);	
 	}
 
-	/**
-	 * All offers proposed by the other parties will be received as a message.
-	 * You can use this information to your advantage, for example to predict
-	 * their utility.
-	 *
-	 * @param sender
-	 *            The party that did the action.
-	 * @param action
-	 *            The action that party did.
-	 */
 	@Override
 	public void receiveMessage(Object sender, Action action) {
 		super.receiveMessage(sender, action);
@@ -96,6 +64,7 @@ public class Agent11_Go extends AbstractNegotiationParty {
 		if(getUtility(currentOpBid)>0){
 			lastBid = currentOpBid;
 			try {
+				//Add the bid to the bidding history
 				BidHistory bidH = new BidHistory();
 				if(bidHistory.containsKey(sender.toString())){
 				 bidH = bidHistory.get(sender.toString());
@@ -111,19 +80,18 @@ public class Agent11_Go extends AbstractNegotiationParty {
 	}
 	
 	public void updateModel(Object sender, Bid opponentBid, double time) {
+		//This function handles the Opponent modelling
 		BidHistory bidHist = bidHistory.get(sender.toString());
 		if (!opponentUtilitySpace.containsKey(sender.toString())) {
-			System.out.println("sender: "+sender.toString());
 			//initialize opponent model's weight
 			UtilitySpace oppUSpace = new UtilitySpace(getUtilitySpace());
 			amountOfIssues = oppUSpace.getDomain().getIssues().size();
 			for (Entry<Objective, Evaluator> e : oppUSpace.getEvaluators()) {
-				// set the issue weights
+				// set the issue weights equally to 1/#OfIssues
 				oppUSpace.unlock(e.getKey());
 				e.getValue().setWeight(1D / (double) amountOfIssues);
 				try {
-					// set all value weights to one (they are normalized when
-					// calculating the utility)
+					// set all value weights to 1
 					for (ValueDiscrete vd : ((IssueDiscrete) e.getKey())
 							.getValues())
 						((EvaluatorDiscrete) e.getValue()).setEvaluation(vd, 1);
@@ -151,42 +119,26 @@ public class Agent11_Go extends AbstractNegotiationParty {
 				numberOfUnchanged++;
 		}
 
-		// This is the value to be added to weights of unchanged issues before
-		// normalization.
-		// Also the value that is taken as the minimum possible weight,
-		// (therefore defining the maximum possible also).
 		double goldenValue = learningRate / (double) amountOfIssues;
-		// The total sum of weights before normalization.
 		double totalSum = 1D + goldenValue * (double) numberOfUnchanged;
-		// The maximum possible weight
 		double maximumWeight = 1D - ((double) amountOfIssues) * goldenValue
 				/ totalSum;
 
 		UtilitySpace oppUSpace = opponentUtilitySpace.get(sender.toString());
 		
-		// re-weighing issues while making sure that the sum remains 1
+		// update and normalize issue weights
 		for (Integer i : lastDiffSet.keySet()) {
-			if (lastDiffSet.get(i) == 0
-					&& oppUSpace.getWeight(i) < maximumWeight)
-				oppUSpace.setWeight(oppUSpace.getDomain()
-						.getObjective(i),
-						(oppUSpace.getWeight(i) + goldenValue)
-								/ totalSum);
+			if (lastDiffSet.get(i) == 0	&& oppUSpace.getWeight(i) < maximumWeight)
+				oppUSpace.setWeight(oppUSpace.getDomain().getObjective(i),
+						(oppUSpace.getWeight(i) + goldenValue)/ totalSum);
 			else
-				oppUSpace.setWeight(oppUSpace.getDomain()
-						.getObjective(i), oppUSpace.getWeight(i)
-						/ totalSum);
+				oppUSpace.setWeight(oppUSpace.getDomain().getObjective(i),
+						oppUSpace.getWeight(i)/ totalSum);
 		}
 
-		// Then for each issue value that has been offered last time, a constant
-		// value is added to its corresponding ValueDiscrete.
+		// update the issue value weights
 		try {
-			for (Entry<Objective, Evaluator> e : oppUSpace
-					.getEvaluators()) {
-				// cast issue to discrete and retrieve value. Next, add constant
-				// learnValueAddition to the current preference of the value to
-				// make
-				// it more important
+			for (Entry<Objective, Evaluator> e : oppUSpace.getEvaluators()) {
 				((EvaluatorDiscrete) e.getValue())
 						.setEvaluation(
 								oppBid.getBid().getValue(
@@ -206,8 +158,8 @@ public class Agent11_Go extends AbstractNegotiationParty {
 		}
 	}
 	
-	private HashMap<Integer, Integer> determineDifference(Object sender, BidDetails first,
-			BidDetails second) {
+	private HashMap<Integer, Integer> determineDifference(Object sender, BidDetails first,BidDetails second) {
+		//get the value differences between 2 bids
 		HashMap<Integer, Integer> diff = new HashMap<Integer, Integer>();
 		try {
 			for (Issue i : opponentUtilitySpace.get(sender.toString()).getDomain().getIssues()) {
@@ -223,9 +175,11 @@ public class Agent11_Go extends AbstractNegotiationParty {
 	}
 	
 	public Bid determineNextBid() {
+		//This function handles Bidding strategy
 		Bid bestBid;
 		double time = getTimeLine().getTime();
 		double utilityGoal;
+		//calculate target utility
 		utilityGoal = 1-Math.pow(time,2);
 		if(utilityGoal < 0.7){ utilityGoal = 0.7;}
 		try {
@@ -241,19 +195,24 @@ public class Agent11_Go extends AbstractNegotiationParty {
 	
 	
 	private Bid getBidNearUtility(double target, double delta) throws Exception{
+		//This function searches the best bid based on target utility and tolerance
 		BidIterator iter = new BidIterator(utilitySpace.getDomain());
 		Bid bestBid = null;
 		double maxOpUtil = -1;
 		while(iter.hasNext()){
 			Bid nBid = iter.next();
+			//check all bids
 			try {
 				if(Math.abs( getUtility(nBid)-target)<delta){
+					//bid's utility is in the range, check the opponent's utility
 					double oppUtil = 0;
 					for (Entry<Object, UtilitySpace> opU : opponentUtilitySpace.entrySet()){
+						//sum all opponent's utility
 						oppUtil += opU.getValue().getUtility(nBid);
 					}
 					
 					if(oppUtil > maxOpUtil){
+						//choose maximum opponent total utility
 						bestBid = nBid;
 						maxOpUtil = oppUtil; 
 					}
@@ -264,6 +223,7 @@ public class Agent11_Go extends AbstractNegotiationParty {
 			}
 		}
 		if(maxOpUtil == -1){
+			//searching file, add the tolerance value
 			return getBidNearUtility(target,delta+0.1);
 		}
 		return bestBid;
