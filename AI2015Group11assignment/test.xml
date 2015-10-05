@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multilateralTournamentsConfiguration>
+    <tournaments>
+        <tournament>
+            <deadline>
+                <value>60</value>
+                <type>TIME</type>
+                <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
+            </deadline>
+            <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
+            <partyRepItems>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party1" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party1">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party2" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party2">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="C:\Users\thijs_000\Documents\GitHub\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11_Go.class" partyName="Agent11_Go">
+                    <properties/>
+                </item>
+            </partyRepItems>
+            <partyProfileItems>
+                <item url="file:etc/templates/partydomain/party1_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
+            </partyProfileItems>
+            <numSessions>5</numSessions>
+            <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
+            <repetitionAllowed>false</repetitionAllowed>
+        </tournament>
+    </tournaments>
+</multilateralTournamentsConfiguration>

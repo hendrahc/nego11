@@ -1,0 +1,75 @@
+Starting negotiation session.
+Round 1
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a1000, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a217, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.98, Delivery: 45 days, Payment: Upon delivery, Returns: 10% spoilage allowed, ])
+Round 2
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a889, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a107, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $4.37, Delivery: 30 days, Payment: 60 days after delivery, Returns: Full price, ])
+Round 3
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a876, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a2, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $4.12, Delivery: 45 days, Payment: Upon delivery, Returns: 5% spoilage allowed, ])
+Round 4
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a856, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a372, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $4.37, Delivery: 20 days, Payment: Upon delivery, Returns: 5% spoilage allowed, ])
+Round 5
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a831, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a132, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.47, Delivery: 30 days, Payment: 30 days after delivery, Returns: 5% spoilage allowed, ])
+Round 6
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a801, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a257, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.47, Delivery: 20 days, Payment: 60 days after delivery, Returns: Full price, ])
+Round 7
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a765, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a694, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.71, Delivery: 60 days, Payment: 30 days after delivery, Returns: 5% spoilage allowed, ])
+Round 8
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a723, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a267, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.47, Delivery: 30 days, Payment: 30 days after delivery, Returns: 10% spoilage allowed, ])
+Round 9
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a694, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.98, Delivery: 60 days, Payment: 30 days after delivery, Returns: 5% spoilage allowed, ])
+Round 10
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Accept)
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a554, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $4.12, Delivery: 60 days, Payment: 60 days after delivery, Returns: 10% spoilage allowed, ])
+Round 11
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a561, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.71, Delivery: 30 days, Payment: Upon delivery, Returns: 5% spoilage allowed, ])
+Round 12
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a619, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.71, Delivery: 60 days, Payment: 30 days after delivery, Returns: 10% spoilage allowed, ])
+Round 13
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a393, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.47, Delivery: 20 days, Payment: 30 days after delivery, Returns: 10% spoilage allowed, ])
+Round 14
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a449, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.47, Delivery: 60 days, Payment: 30 days after delivery, Returns: 5% spoilage allowed, ])
+Round 15
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a289, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $3.71, Delivery: 30 days, Payment: Upon delivery, Returns: 5% spoilage allowed, ])
+Round 16
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a629, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $4.12, Delivery: 45 days, Payment: 30 days after delivery, Returns: 10% spoilage allowed, ])
+Round 17
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Offer: Bid[Pie: a694, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Offer: Bid[Pie: a723, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@66f1cf3 (Offer: Bid[Price: $4.12, Delivery: 60 days, Payment: Upon delivery, Returns: 5% spoilage allowed, ])
+Round 18
+  Turn 1: negotiator.parties.NegotiationPartyInternal@74b57b0a (Accept)
+  Turn 2: negotiator.parties.NegotiationPartyInternal@36a10962 (Accept)
+Found an agreement: Bid[Price: $4.12, Delivery: 60 days, Payment: Upon delivery, Returns: 5% spoilage allowed, ]
+Finished negotiation session in 0,791s
+Error: could not log session details

@@ -12,7 +12,10 @@
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Simple UI party" classPath="negotiator.parties.CounterOfferHumanNegotiationParty" partyName="UI Party">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party1" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party1">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party2" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party2">
                 <properties/>
             </partyRepItem>
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="1. Phoenix" classPath="agents.anac.y2015.Phoenix.PhoenixParty" partyName="ANAC2015-1-Phoenix">
@@ -87,7 +90,7 @@
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="24. JonnyBlack" classPath="agents.anac.y2015.JonnyBlack.JonnyBlack" partyName="ANAC2015-24-JonnyBlack">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11_Go.class" partyName="Agent11_Go">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="C:\Users\thijs_000\Documents\GitHub\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11_Go.class" partyName="Agent11_Go">
                 <properties/>
             </partyRepItem>
         </partyRepItems>
