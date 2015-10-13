@@ -15,14 +15,14 @@
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party2" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party2">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="C:\Users\thijs_000\Documents\GitHub\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11_Go.class" partyName="Agent11_Go">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\group11\Group11.class" partyName="Group11">
                     <properties/>
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/partydomain/party1_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
+                <item url="file:Group11partydomain/party_profile_Hendra.xml"/>
+                <item url="file:Group11partydomain/party_profile_Jimmy.xml"/>
+                <item url="file:Group11partydomain/party_profile_Thijs.xml"/>
             </partyProfileItems>
             <numSessions>5</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>

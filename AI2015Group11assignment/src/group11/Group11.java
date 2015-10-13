@@ -1,4 +1,4 @@
-package BoaGroup11;
+package group11;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +19,7 @@ import negotiator.utility.*;
  *  T. Smit (4242785)
  ************************************************/
 
-public class Agent11_Go extends AbstractNegotiationParty {
+public class Group11 extends AbstractNegotiationParty {
 
 	//opponent model & bidding history for each opponent agent
 	private HashMap<Object,UtilitySpace> opponentUtilitySpace = new HashMap<Object,UtilitySpace>(); 
@@ -44,13 +44,12 @@ public class Agent11_Go extends AbstractNegotiationParty {
 				e.printStackTrace();
 			}
 		}
-		
 		Bid nextBid = determineNextBid();
-		
 		double nextMyBidUtil = getUtility(nextBid);
+		//double time = getTimeLine().getTime();
 		
-		//AC Next Approach
-		if(getUtility(lastBid) >=nextMyBidUtil){
+		//use AC Next approach, and accept if this agent get the highest utility
+		if((getUtility(lastBid) >=nextMyBidUtil) && isGetHighest(lastBid)){
 			return new Accept();
 		}
 
@@ -61,9 +60,10 @@ public class Agent11_Go extends AbstractNegotiationParty {
 	public void receiveMessage(Object sender, Action action) {
 		super.receiveMessage(sender, action);
 		Bid currentOpBid = Action.getBidFromAction(action);
-		if(getUtility(currentOpBid)>0){
+		if(!sender.toString().equals("Protocol") && getUtility(currentOpBid)>0){
 			lastBid = currentOpBid;
 			try {
+				System.out.println("Sender is "+sender.toString());
 				//Add the bid to the bidding history
 				BidHistory bidH = new BidHistory();
 				if(bidHistory.containsKey(sender.toString())){
@@ -180,10 +180,10 @@ public class Agent11_Go extends AbstractNegotiationParty {
 		double time = getTimeLine().getTime();
 		double utilityGoal;
 		//calculate target utility
-		utilityGoal = 1-Math.pow(time,2);
-		if(utilityGoal < 0.7){ utilityGoal = 0.7;}
+		utilityGoal = (1-Math.pow(time,2))*0.5+0.5;
+		if(utilityGoal < 0.7){ utilityGoal = 0.7; }
 		try {
-			bestBid = getBidNearUtility(utilityGoal,0.1);
+			bestBid = getBidNearUtility(utilityGoal,0.05);
 			return bestBid;
 		} catch (Exception e) {
 			System.out.println("Fail tp get bid near utility");
@@ -203,15 +203,23 @@ public class Agent11_Go extends AbstractNegotiationParty {
 			Bid nBid = iter.next();
 			//check all bids
 			try {
-				if(Math.abs( getUtility(nBid)-target)<delta){
+				double currMyU = getUtility(nBid); 
+				if(Math.abs(currMyU - target)<delta){
 					//bid's utility is in the range, check the opponent's utility
 					double oppUtil = 0;
+					boolean Iwin = true;
 					for (Entry<Object, UtilitySpace> opU : opponentUtilitySpace.entrySet()){
 						//sum all opponent's utility
-						oppUtil += opU.getValue().getUtility(nBid);
+						double currOpU = opU.getValue().getUtility(nBid);
+						if(Iwin && (currMyU>currOpU*0.9)){
+							oppUtil += currOpU;
+						}else{
+							Iwin = false;
+							break;
+						}
 					}
 					
-					if(oppUtil > maxOpUtil){
+					if(Iwin && (oppUtil > maxOpUtil)){
 						//choose maximum opponent total utility
 						bestBid = nBid;
 						maxOpUtil = oppUtil; 
@@ -224,11 +232,27 @@ public class Agent11_Go extends AbstractNegotiationParty {
 		}
 		if(maxOpUtil == -1){
 			//searching file, add the tolerance value
-			return getBidNearUtility(target,delta+0.1);
+			return getBidNearUtility(target,delta+0.05);
 		}
 		return bestBid;
 	}
 	
+	public boolean isGetHighest(Bid bid){
+		double myUtil = getUtility(bid); 
+		
+		for (Entry<Object, UtilitySpace> opU : opponentUtilitySpace.entrySet()){
+			try {
+				if(myUtil < opU.getValue().getUtility(bid)){
+					return false;
+				}
+			} catch (Exception e) {
+				System.out.println("Fail to get opponent utility space 3");
+				e.printStackTrace();
+			}
+		}
+		
+		return true;
+	}
 	
     @Override
     public String getDescription() {
