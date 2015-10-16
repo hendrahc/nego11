@@ -67,7 +67,6 @@
             <agentRepItem description="" classPath="agents.BayesianAgent" agentName="BayesianAgent"/>
             <agentRepItem description="" classPath="agents.ABMPAgent2" agentName="ABMPAgent2"/>
             <agentRepItem description="Simplistic Tit for Tat Agent" classPath="agents.SimpleTitForTatPN" agentName="SimpleTitForTatPN"/>
-            <agentRepItem description=" Agent11 (compatible with non-linear utility spaces) (1.0)" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\BoaGroup11\Agent11.class" agentName=" Agent11 (compatible with non-linear utility spaces)"/>
             <agentRepItem description="Simple Agent(compatible with non-linear utility spaces) (3.1)" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\examplepackage\ExampleAgent.class" agentName="Simple Agent(compatible with non-linear utility spaces)"/>
         </agentRepItems>
         <partyRepItems/>

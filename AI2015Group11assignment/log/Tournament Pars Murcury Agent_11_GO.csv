@@ -1,0 +1,8 @@
+sep=;
+Run time (s);Round;Exception;deadline;Agreement;Discounted;#agreeing;min.util.;max.util.;Dist. to Pareto;Dist. to Nash;Dist. to Social Welfare;Agent 1;Agent 2;Agent 3;Utility 1;Utility 2;Utility 3;Profile 1;Profile 2;Profile 3
+35.028;799;;60s;Yes;No;3;0.63791;0.97240;0.00000;0.33185;2.39329;ParsAgent@495220684;Mercury@363901667;Agent11_Go@1956796494;0.9723999999999999;0.7829801861072828;0.6379140244807051;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+28.580;469;;60s;Yes;No;3;0.60457;1.00000;0.00000;0.43860;2.27885;ParsAgent@1615325836;Agent11_Go@1395479630;Mercury@950810745;1.0;0.6742804905079381;0.6045674509047593;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+20.803;356;;60s;Yes;No;3;0.78020;1.00000;0.00000;0.00000;2.57962;Agent11_Go@614788803;ParsAgent@1211586304;Mercury@1290658019;0.7802;1.0;0.7994156026764689;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+33.751;675;;60s;Yes;No;3;0.62340;0.97987;0.10501;0.42014;2.25778;Agent11_Go@1027583191;Mercury@252877727;ParsAgent@605499803;0.6234000000000001;0.654501984498538;0.9798741622972705;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+28.828;572;;60s;Yes;No;3;0.58120;1.00000;0.00000;0.37825;2.32972;Mercury@723634328;Agent11_Go@1663665876;ParsAgent@995293992;0.5811999999999999;0.7485243725463229;0.9999999999999999;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+29.003;565;;60s;Yes;No;3;0.78020;1.00000;0.00000;0.00000;2.57962;Mercury@303769829;ParsAgent@917330684;Agent11_Go@1298886240;0.7802;1.0;0.7994156026764689;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml

@@ -1,0 +1,8 @@
+sep=;
+Run time (s);Round;Exception;deadline;Agreement;Discounted;#agreeing;min.util.;max.util.;Dist. to Pareto;Dist. to Nash;Dist. to Social Welfare;Agent 1;Agent 2;Agent 3;Utility 1;Utility 2;Utility 3;Profile 1;Profile 2;Profile 3
+43.269;838;;60s;Yes;No;3;0.63899;0.88740;0.00000;0.38005;2.37702;ParsAgent@476595221;Mercury@456739988;Group11@1992197523;0.8874;0.6389929320000878;0.8506255196463044;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+42.880;757;;60s;Yes;No;3;0.65144;0.91280;0.00000;0.24228;2.42560;ParsAgent@1726034335;Group11@159881458;Mercury@752530951;0.9128;0.8613680455488991;0.6514356915112353;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+38.580;604;;60s;Yes;No;3;0.68478;0.97007;0.00000;0.14581;2.52005;Group11@937727922;ParsAgent@286908031;Mercury@438296218;0.8652;0.9700677411482438;0.6847822650871811;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+60.000;1140;;60s;No;No;1;0.00000;0.00000;1.30291;1.49926;0.00000;Group11@1087016288;Mercury@839367387;ParsAgent@1659161647;0.0;0.0;0.0;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+42.879;752;;60s;Yes;No;3;0.78020;0.89749;0.00000;0.19967;2.50377;Mercury@1016862607;Group11@929476623;ParsAgent@917554483;0.7802;0.8260804870410487;0.8974937602527804;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml
+60.000;1066;;60s;No;No;1;0.00000;0.00000;1.30291;1.49926;0.00000;Mercury@1747566551;ParsAgent@159684491;Group11@2127593529;0.0;0.0;0.0;party_profile_Hendra.xml;party_profile_Jimmy.xml;party_profile_Thijs.xml

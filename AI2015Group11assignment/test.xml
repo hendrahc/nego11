@@ -9,13 +9,13 @@
             </deadline>
             <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
             <partyRepItems>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party1" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party1">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="3. ParsAgent" classPath="agents.anac.y2015.ParsAgent.ParsAgent" partyName="ANAC2015-3-ParsAgent">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party2" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party2">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="5. Mercury " classPath="agents.anac.y2015.Mercury.Mercury" partyName="ANAC2015-5-Mercury">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\group11\Group11.class" partyName="Group11">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="/Users/jkvanschoubroeck/nego11/AI2015Group11assignment/bin/group11/Group11.class" partyName="Group11">
                     <properties/>
                 </item>
             </partyRepItems>
@@ -24,7 +24,7 @@
                 <item url="file:Group11partydomain/party_profile_Jimmy.xml"/>
                 <item url="file:Group11partydomain/party_profile_Thijs.xml"/>
             </partyProfileItems>
-            <numSessions>5</numSessions>
+            <numSessions>10</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
             <repetitionAllowed>false</repetitionAllowed>
         </tournament>

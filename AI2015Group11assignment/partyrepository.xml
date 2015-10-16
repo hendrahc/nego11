@@ -90,10 +90,10 @@
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="24. JonnyBlack" classPath="agents.anac.y2015.JonnyBlack.JonnyBlack" partyName="ANAC2015-24-JonnyBlack">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\group11\Group11.class" partyName="Group11">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="/Users/jkvanschoubroeck/nego11/AI2015Group11assignment/bin/group11/Agent11_Go.class" partyName="Agent11_Go">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="D:\Data\KULIAH_S2\AI Technique\nego11\AI2015Group11assignment\bin\group11\Agent11_Go.class" partyName="Agent11_Go">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Agent11 - Multilateral" classPath="/Users/jkvanschoubroeck/nego11/AI2015Group11assignment/bin/group11/Group11.class" partyName="Group11">
                 <properties/>
             </partyRepItem>
         </partyRepItems>
