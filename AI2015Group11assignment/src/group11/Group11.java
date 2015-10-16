@@ -29,7 +29,7 @@ public class Group11 extends AbstractNegotiationParty {
 	
 	private int amountOfIssues;
 	private double learningRate = 0.2;
-	private int learnValueAddition = 1;
+	private int learnValueAddition;
 
 	@Override
 	public Action chooseAction(List<Class<? extends Action>> validActions) {
@@ -80,6 +80,9 @@ public class Group11 extends AbstractNegotiationParty {
 	}
 	
 	public void updateModel(Object sender, Bid opponentBid, double time) {
+		
+		learnValueAddition = (int) Math.round((1-getTimeLine().getTime())*10);
+		
 		//This function handles the Opponent modelling
 		BidHistory bidHist = bidHistory.get(sender.toString());
 		if (!opponentUtilitySpace.containsKey(sender.toString())) {
@@ -180,7 +183,7 @@ public class Group11 extends AbstractNegotiationParty {
 		double time = getTimeLine().getTime();
 		double utilityGoal;
 		//calculate target utility
-		utilityGoal = (1-Math.pow(time,2))*0.5+0.1;
+		utilityGoal = (1-Math.pow(time,2))*0.5+0.5;
 		if(utilityGoal < 0.85){ utilityGoal = 0.85; }
 		try {
 			bestBid = getBidNearUtility(utilityGoal,0.05);
@@ -195,6 +198,7 @@ public class Group11 extends AbstractNegotiationParty {
 	
 	
 	private Bid getBidNearUtility(double target, double delta) throws Exception{
+		System.out.println("target utility:"+target+", delta: "+delta);
 		//This function searches the best bid based on target utility and tolerance
 		BidIterator iter = new BidIterator(utilitySpace.getDomain());
 		Bid bestBid = null;
