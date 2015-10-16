@@ -1,0 +1,8 @@
+sep=;
+Run time (s);Round;Exception;deadline;Agreement;Discounted;#agreeing;min.util.;max.util.;Dist. to Pareto;Dist. to Nash;Dist. to Social Welfare;Agent 1;Agent 2;Agent 3;Utility 1;Utility 2;Utility 3;Profile 1;Profile 2;Profile 3
+47.657;719;;60s;Yes;No;3;0.60862;0.85031;0.00000;0.34636;2.24560;ParsAgent@356986223;Mercury@4460385;Group11@147701730;0.7866666666666667;0.6086178232668726;0.8503107445423197;party1_utility.xml;party2_utility.xml;party3_utility.xml
+58.269;752;;60s;Yes;No;3;0.70917;0.87605;0.00000;0.09652;2.33131;ParsAgent@779054470;Group11@1665377141;Mercury@1839237436;0.7091666666666666;0.8760514919327387;0.7460922880531652;party1_utility.xml;party2_utility.xml;party3_utility.xml
+44.887;508;;60s;Yes;No;3;0.69241;0.85649;0.00000;0.09921;2.39723;Group11@576028273;ParsAgent@450903635;Mercury@260057555;0.8483333333333334;0.8564909885811369;0.6924080946242358;party1_utility.xml;party2_utility.xml;party3_utility.xml
+60.000;1092;;60s;No;No;1;0.00000;0.00000;1.16612;1.41191;0.00000;Group11@979544635;Mercury@597042543;ParsAgent@1768107896;0.0;0.0;0.0;party1_utility.xml;party2_utility.xml;party3_utility.xml
+44.311;581;;60s;Yes;No;3;0.62667;0.86811;0.00000;0.24562;2.31099;Mercury@1941963381;Group11@1823918373;ParsAgent@1414517733;0.6266666666666667;0.8162157250865434;0.8681093397144823;party1_utility.xml;party2_utility.xml;party3_utility.xml
+60.000;872;;60s;No;No;1;0.00000;0.00000;1.16612;1.41191;0.00000;Mercury@1395277640;ParsAgent@1225696120;Group11@1254954040;0.0;0.0;0.0;party1_utility.xml;party2_utility.xml;party3_utility.xml

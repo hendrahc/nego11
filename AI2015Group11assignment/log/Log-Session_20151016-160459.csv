@@ -1,0 +1,85 @@
+Starting negotiation session.
+Round 1
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Chips and Nuts, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Plain, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Plain, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 2
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Chips and Nuts, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Plain, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 3
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Chips and Nuts, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 4
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 5
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Custom, Handmade, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 6
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 7
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 8
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Custom, Handmade, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 9
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Your Dorm, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 10
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Custom, Handmade, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 11
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 12
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 13
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 14
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Custom, Printed, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 15
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Custom, Handmade, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 16
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Offer: Bid[Food: Catering, Drinks: Catering, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Room, Invitations: Photo, Music: DJ, Cleanup: Hired Help, ])
+Round 17
+  Turn 1: negotiator.parties.NegotiationPartyInternal@739bd846 (Offer: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@7c9416f5 (Accept)
+  Turn 3: negotiator.parties.NegotiationPartyInternal@5e6f6eb8 (Accept)
+Found an agreement: Bid[Food: Catering, Drinks: Non-Alcoholic, Location: Party Room, Invitations: Photo, Music: MP3, Cleanup: Specialized Materials, ]
+Finished negotiation session in 1.592s
+Time (s):		1.592181
+Rounds:		17
+Agreement?:		Yes
+Discounted?:		No
+Approval:		3
+Min. utility:		0.76607
+Max. utility:		0.89130
+Distance to pareto:	0.00000
+Distance to Nash:	0.12326
+Social welfare:		2.48517
+Agent utility:		0.82780 (Party 1)
+Agent utility:		0.89130 (Party 2)
+Agent utility:		0.76607 (Party 3)
+
