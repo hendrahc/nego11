@@ -180,7 +180,7 @@ public class Group11 extends AbstractNegotiationParty {
 		double time = getTimeLine().getTime();
 		double utilityGoal;
 		//calculate target utility
-		utilityGoal = (1-Math.pow(time,2))*0.5+0.5;
+		utilityGoal = (1-Math.pow(time,2))*0.5+0.1;
 		if(utilityGoal < 0.85){ utilityGoal = 0.85; }
 		try {
 			bestBid = getBidNearUtility(utilityGoal,0.05);
@@ -211,7 +211,7 @@ public class Group11 extends AbstractNegotiationParty {
 					for (Entry<Object, UtilitySpace> opU : opponentUtilitySpace.entrySet()){
 						//sum all opponent's utility
 						double currOpU = opU.getValue().getUtility(nBid);
-						if(Iwin && (currMyU>currOpU*0.9)){
+						if(Iwin && (currMyU>=currOpU)){
 							oppUtil += currOpU;
 						}else{
 							Iwin = false;
