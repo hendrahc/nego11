@@ -181,7 +181,7 @@ public class Group11 extends AbstractNegotiationParty {
 		double utilityGoal;
 		//calculate target utility
 		utilityGoal = (1-Math.pow(time,2))*0.5+0.5;
-		if(utilityGoal < 0.7){ utilityGoal = 0.7; }
+		if(utilityGoal < 0.85){ utilityGoal = 0.85; }
 		try {
 			bestBid = getBidNearUtility(utilityGoal,0.05);
 			return bestBid;
